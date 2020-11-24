@@ -63,7 +63,7 @@ knowledge2 = And(
 knowledge3 = And(
     # TODO
     # A says either "I am a knight." or "I am a knave.", but you don't know which.
-    Or(Biconditional(AKnight,AKnight), Biconditional(AKnave,AKnave)),
+    Or(Biconditional(AKnight,AKnight), Biconditional(AKnave,Or(AKnave,AKnight))),
     # B says "A said 'I am a knave'."
     Biconditional(BKnight,Biconditional(AKnave,AKnave)),
     # B says "C is a knave."
